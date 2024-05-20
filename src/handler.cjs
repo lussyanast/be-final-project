@@ -1,7 +1,13 @@
-const { nanoid } = require('nanoid');
-const { books } = require('./books');
+const loadNanoid = async () => {
+  const { nanoid } = await import('nanoid');
+  return nanoid;
+};
 
-const addBookHandler = (request, h) => {
+const { books } = require('./books.cjs');
+
+const addBookHandler = async (request, h) => {
+  const nanoid = await loadNanoid(); // Menggunakan nanoid secara asinkron
+
   const {
     name,
     year,

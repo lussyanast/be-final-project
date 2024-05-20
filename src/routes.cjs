@@ -4,7 +4,7 @@ const {
   getBooksByIdHandler,
   editBooksByIdHandler,
   deleteBooksByIdHandler,
-} = require('./handler');
+} = require('./handler.cjs');
 
 const routes = [
   {
